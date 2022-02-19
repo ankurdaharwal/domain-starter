@@ -305,7 +305,6 @@ const App = () => {
         />
         {editing ? (
           <div className="button-container">
-            // This will call the updateDomain function we just made
             <button
               className="cta-button mint-button"
               disabled={loading}
@@ -313,8 +312,6 @@ const App = () => {
             >
               Set record
             </button>
-            // This will let us get out of editing mode by setting editing to
-            false
             <button
               className="cta-button mint-button"
               onClick={() => {
@@ -424,8 +421,8 @@ const App = () => {
         </div>
 
         {!currentAccount && renderNotConnectedContainer()}
-        {/* Render the input form if an account is connected */}
         {currentAccount && renderInputForm()}
+        {mints && renderMints()}
 
         <div className="footer-container">
           <img alt="Twitter Logo" className="twitter-logo" src={twitterLogo} />
